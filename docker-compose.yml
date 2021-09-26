@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  postgres:                              
+    container_name: pg_db3  
+    image: postgres                    
+    restart: always
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_DB=pg_db3
+      - POSTGRES_USER=nnerel13
+      - POSTGRES_PASSWORD=password
+
+  pgadmin:
+    container_name: pgadmin4-django
+    image: dpage/pgadmin4
+    restart: always
+
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: 'a.g@gmail.com'
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+     - "5050:80"
+
+     
